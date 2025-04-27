@@ -10,6 +10,11 @@ let computerScore = parseInt(
   document.body.querySelector(".computerScore").innerHTML
 );
 
+let reload = document.body.querySelector(".reload");
+reload.addEventListener("click", () => {
+  location.reload();
+});
+
 if (document.querySelector(".message").innerHTML === "") {
   document.body.querySelector(".message").innerHTML = "Click your choice";
 }
@@ -40,8 +45,21 @@ let checkWinner = (player, computer) => {
 choices.forEach((choice) => {
   choice.addEventListener("click", () => {
     playerChoice.innerHTML = choice.querySelector(".choiceText").innerHTML;
-    computerChoice.innerHTML =
-      randomChoice().querySelector(".choiceText").innerHTML;
-    checkWinner(playerChoice.innerHTML, computerChoice.innerHTML);
+
+    let loadingText = ".";
+
+    let loadingInterval = setInterval(() => {
+      computerChoice.innerHTML = loadingText;
+      loadingText = loadingText.length < 3 ? loadingText + "." : ".";
+    }, 500);
+
+    setTimeout(() => {
+      clearInterval(loadingInterval);
+
+      computerChoice.innerHTML =
+        randomChoice().querySelector(".choiceText").innerHTML;
+
+      checkWinner(playerChoice.innerHTML, computerChoice.innerHTML);
+    }, Math.random() * 1000 + 1000);
   });
 });

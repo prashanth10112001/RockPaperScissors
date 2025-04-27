@@ -13,8 +13,28 @@
   height: 100vh;
 }
 
-h1 {
-  margin-bottom: 20px;
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.header :nth-child(2) {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.header :nth-child(2):hover {
+  scale: 1.2;
+  transition: all 0.4s ease-in-out;
+}
+
+.reload {
+  font-family: Lucida Sans Unicode;
+  font-size: 20px;
 }
 
 .choices {
@@ -112,7 +132,11 @@ h1 {
   font-size: 30px;
   gap: 20px;
   margin-top: 40px;
+}
+
+span {
   font-weight: bold;
+  color: rgb(0, 0, 0);
 }
 
 @media screen and (max-width: 600px) {
