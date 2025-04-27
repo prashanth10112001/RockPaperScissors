@@ -44,6 +44,8 @@ let checkWinner = (player, computer) => {
 
 choices.forEach((choice) => {
   choice.addEventListener("click", () => {
+    choices.forEach((choice) => (choice.style.pointerEvents = "none"));
+
     playerChoice.innerHTML = choice.querySelector(".choiceText").innerHTML;
 
     let loadingText = ".";
@@ -60,6 +62,8 @@ choices.forEach((choice) => {
         randomChoice().querySelector(".choiceText").innerHTML;
 
       checkWinner(playerChoice.innerHTML, computerChoice.innerHTML);
+
+      choices.forEach((choice) => (choice.style.pointerEvents = "auto"));
     }, Math.random() * 1000 + 1000);
   });
 });
