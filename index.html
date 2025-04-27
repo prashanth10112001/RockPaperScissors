@@ -7,6 +7,45 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
+    <div class="container">
+      <h1>Rock Paper Scissors</h1>
+
+      <div class="choices">
+        <div class="choice" id="rock">
+          <div class="img">&#129704;</div>
+          <div class="choiceText">Rock</div>
+        </div>
+        <div class="choice" id="paper">
+          <div class="img">&#128196;</div>
+          <div class="choiceText">Paper</div>
+        </div>
+        <div class="choice" id="scissors">
+          <div class="img">&#x2702;</div>
+          <div class="choiceText">Scissors</div>
+        </div>
+      </div>
+
+      <div class="results">
+        <div class="weapons">
+          <div>User weapon :</div>
+          <div id="playerChoice">Scissors</div>
+        </div>
+
+        <div class="weapons">
+          <div>System weapon :</div>
+          <div id="computerChoice">Scissors</div>
+        </div>
+      </div>
+
+      <div class="score">
+        <div id="playerScore">
+          Player Score: <span class="playerScore">0</span>
+        </div>
+        <div id="computerScore">
+          Computer Score: <span class="computerScore">0</span>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
